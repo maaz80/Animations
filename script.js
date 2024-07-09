@@ -1,41 +1,42 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const svgObject = document.getElementById('svgObject');
+    const svgDoc = document.getElementById('svgObject').contentDocument;
 
-    svgObject.addEventListener('load', function () {
-        const svgDoc = svgObject.contentDocument; 
+    if (!svgDoc) {
+        console.error('SVG content document not found');
+        return;
+    }
 
-        const dotsGroups = svgDoc.querySelectorAll('.dots-nav');
-        const color = '#FF0000'
+    const dotsGroups = svgDoc.querySelectorAll('.dots-nav');
+    const color = '#FF0000';
 
-        let currentDotIndex = -1;
+    let currentDotIndex = -1;
 
-        dotsGroups.forEach((group, i) => {
-            const dots = group.querySelectorAll('.dotsst'); 
-            const lines = group.querySelectorAll('.dotsstro'); 
+    dotsGroups.forEach((group, i) => {
+        const dots = group.querySelectorAll('.dotsst');
+        const lines = group.querySelectorAll('.dotsstro');
 
-            dots.forEach((dot, j) => {
-                const dotIndex = i * dots.length + j; 
-                const line = lines[j]; 
+        dots.forEach((dot, j) => {
+            const dotIndex = i * dots.length + j;
+            const line = lines[j];
 
-                gsap.set(dot, { fill: 'white' });
+            gsap.set(dot, { fill: 'white' });
 
-                ScrollTrigger.create({
-                    trigger: `.screen:nth-child(${dotIndex + 1})`, 
-                    scroller: '.main',
-                    start: 'top center',
-                    end: 'bottom center',
-                    onEnter: () => {
-                        gsap.to(dot, { fill: color, duration: 0.5 }); 
+            ScrollTrigger.create({
+                trigger: `.screen:nth-child(${dotIndex + 1})`,
+                scroller: '.main',
+                start: 'top center',
+                end: 'bottom center',
+                onEnter: () => {
+                    gsap.to(dot, { fill: color, duration: 0.5 });
+                    gsap.to(line, { stroke: 'white', duration: 0.5 });
+                    currentDotIndex = dotIndex;
+                },
+                onLeaveBack: () => {
+                    if (dotIndex <= currentDotIndex) {
+                        gsap.to(dot, { fill: 'white', duration: 0.5 });
                         gsap.to(line, { stroke: 'white', duration: 0.5 });
-                        currentDotIndex = dotIndex;
-                    },
-                    onLeaveBack: () => {
-                        if (dotIndex <= currentDotIndex) {
-                            gsap.to(dot, { fill: 'white', duration: 0.5 });
-                            gsap.to(line, { stroke: 'white', duration: 0.5 }); 
-                        }
                     }
-                });
+                }
             });
         });
     });
