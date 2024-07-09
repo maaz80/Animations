@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const sliderDotsContainer = document.querySelector('.slider-dots');
 
     sections.forEach((section, index) => {
-      
+
         const dot = document.createElement('div');
         dot.classList.add('slider-dot');
         if (index === 0) {
@@ -149,7 +149,7 @@ document.querySelectorAll('.screen').forEach((section, index) => {
             scroller: '.main',
             start: 'top center',
             end: 'bottom center',
-            scrub: 3
+            scrub: 1
         }
     });
     gsap.to('body', {
@@ -159,7 +159,7 @@ document.querySelectorAll('.screen').forEach((section, index) => {
             scroller: '.main',
             start: 'top center',
             end: 'bottom center',
-            scrub: 3
+            scrub: 1
         }
     });
 });
