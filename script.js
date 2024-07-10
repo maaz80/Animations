@@ -149,7 +149,7 @@ document.querySelectorAll('.screen').forEach((section, index) => {
             scroller: '.main',
             start: 'top center',
             end: 'bottom center',
-            scrub: 1
+            scrub: 2
         }
     });
     gsap.to('body', {
@@ -159,7 +159,7 @@ document.querySelectorAll('.screen').forEach((section, index) => {
             scroller: '.main',
             start: 'top center',
             end: 'bottom center',
-            scrub: 1
+            scrub: 2
         }
     });
 });
