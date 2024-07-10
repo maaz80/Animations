@@ -165,8 +165,9 @@ document.querySelectorAll('.screen').forEach((section, index) => {
 });
 
 
-
-
+// Function to set GSAP animations for desktop view
+function setDesktopAnimations() {
+   
 // Page 1
 gsap.from(".imgbox1 .first", {
     opacity: 0,
@@ -363,3 +364,415 @@ gsap.from(".left7 h1, .left7 .tag7, .minitext7, .lasttext7 div, .right7 div", {
         toggleActions: "play reset play reset"
     }
 });
+}
+
+// Function to set GSAP animations for mobile view
+function setMobileAnimations() {
+    // Page 1
+  
+// Page 1
+gsap.from(".imgbox1 .first", {
+    opacity: 0,
+    y: -30,
+    delay: 0.5,
+    duration: 1,
+    stagger: 0.5,
+    scrollTrigger: {
+        trigger: ".imgbox1",
+        scroller: ".main",
+        start: "top 80%",
+        toggleActions: "play none play reset"
+    }
+});
+
+gsap.from(".left1 h1, .minitext, .lasttext div, .right1 div", {
+    opacity: 0,
+    y: -10,
+    duration: 1,
+    stagger: 0.1,
+    scrollTrigger: {
+        trigger: ".left1",
+        scroller: ".main",
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none play reset"
+    }
+});
+
+// Page 2
+gsap.from(".imgbox2 .second", {
+    opacity: 0,
+    y: -30,
+    duration: 1,
+    stagger: 0.5,
+    scrollTrigger: {
+        trigger: ".imgbox2",
+        scroller: ".main",
+        start: "top 80%",
+        toggleActions: "play none play reset"
+    }
+});
+
+gsap.from(".left2 h1, .minitext2, .lasttext2 div, .right2 div", {
+    opacity: 0,
+    x: -10,
+    duration: 1,
+    stagger: 0.1,
+    scrollTrigger: {
+        trigger: ".left2",
+        scroller: ".main",
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none play reset"
+    }
+});
+
+// Page 3
+gsap.from(".imgbox3 .third", {
+    opacity: 0,
+    y: -30,
+    duration: 1,
+    stagger: 0.5,
+    scrollTrigger: {
+        trigger: ".imgbox3",
+        scroller: ".main",
+        start: "top 80%",
+        toggleActions: "play none play reset"
+    }
+});
+
+gsap.from(".left3 h1, .minitext3, .lasttext3 div, .right3 div", {
+    opacity: 0,
+    x: -10,
+    duration: 1,
+    stagger: 0.1,
+    scrollTrigger: {
+        trigger: ".left3",
+        scroller: ".main",
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none play reset"
+    }
+});
+
+// Page 4
+gsap.from(".imgbox4 .forth", {
+    opacity: 0,
+    y: -30,
+    duration: 1,
+    stagger: 0.5,
+    scrollTrigger: {
+        trigger: ".imgbox4",
+        scroller: ".main",
+        start: "top 80%",
+        toggleActions: "play none play reset"
+    }
+});
+
+gsap.from(".left4 h1,.left4 .tag, .minitext4, .lasttext4 div, .right4 div", {
+    opacity: 0,
+    x: -10,
+    duration: 1,
+    stagger: 0.1,
+    scrollTrigger: {
+        trigger: ".left4",
+        scroller: ".main",
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none play reset"
+    }
+});
+
+// Page 5
+gsap.from(".imgbox5 .fifth", {
+    opacity: 0,
+    y: -30,
+    duration: 1,
+    stagger: 0.5,
+    scrollTrigger: {
+        trigger: ".imgbox5",
+        scroller: ".main",
+        start: "top 80%",
+        toggleActions: "play none play reset"
+    }
+});
+
+gsap.from(".left5 h1, .minitext5, .lasttext5 div, .right5 div", {
+    opacity: 0,
+    x: -10,
+    duration: 1,
+    stagger: 0.1,
+    scrollTrigger: {
+        trigger: ".left5",
+        scroller: ".main",
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none play reset"
+    }
+});
+
+// Page 6
+gsap.from(".imgbox6 .sixth", {
+    opacity: 0,
+    y: -30,
+    duration: 1,
+    stagger: 0.5,
+    scrollTrigger: {
+        trigger: ".imgbox6",
+        scroller: ".main",
+        start: "top 80%",
+        toggleActions: "play none play reset"
+    }
+});
+
+gsap.from(".left6 h1, .minitext6, .lasttext6 div, .right6 div", {
+    opacity: 0,
+    x: -10,
+    duration: 1,
+    stagger: 0.1,
+    scrollTrigger: {
+        trigger: ".left6",
+        scroller: ".main",
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none play reset"
+    }
+});
+
+// Page 7
+gsap.from(".imgbox7 .seventh", {
+    opacity: 0,
+    y: -30,
+    duration: 1,
+    stagger: 0.5,
+    scrollTrigger: {
+        trigger: ".imgbox7",
+        scroller: ".main",
+        start: "top 80%",
+        toggleActions: "play none play reset"
+    }
+});
+
+gsap.from(".left7 h1, .left7 .tag7, .minitext7, .lasttext7 div, .right7 div", {
+    opacity: 0,
+    x: -10,
+    duration: 1,
+    stagger: 0.1,
+    scrollTrigger: {
+        trigger: ".left7",
+        scroller: ".main",
+        start: "top 80%",
+        end: "top 20%",
+        toggleActions: "play none play reset"
+    }
+});
+}
+
+function setAnimations() {
+    if (window.innerWidth <= 768) {
+        setMobileAnimations();
+    } else {
+        setDesktopAnimations();
+    }
+}
+
+setAnimations();
+window.addEventListener('resize', setAnimations);
+
+
+// // Page 1
+// gsap.from(".imgbox1 .first", {
+//     opacity: 0,
+//     y: 300,
+//     delay: 0.5,
+//     duration: 1,
+//     stagger: 0.5,
+//     scrollTrigger: {
+//         trigger: ".imgbox1",
+//         scroller: ".main",
+//         start: "top 80%",
+//         toggleActions: "play reset play reset"
+//     }
+// });
+
+// gsap.from(".left1 h1, .minitext, .lasttext div, .right1 div", {
+//     opacity: 0,
+//     y: 100,
+//     duration: 1,
+//     stagger: 0.1,
+//     scrollTrigger: {
+//         trigger: ".left1",
+//         scroller: ".main",
+//         start: "top 80%",
+//         end: "top 20%",
+//         toggleActions: "play reset play reset"
+//     }
+// });
+
+// // Page 2
+// gsap.from(".imgbox2 .second", {
+//     opacity: 0,
+//     y: 300,
+//     duration: 1,
+//     stagger: 0.5,
+//     scrollTrigger: {
+//         trigger: ".imgbox2",
+//         scroller: ".main",
+//         start: "top 80%",
+//         toggleActions: "play reset play reset"
+//     }
+// });
+
+// gsap.from(".left2 h1, .minitext2, .lasttext2 div, .right2 div", {
+//     opacity: 0,
+//     x: -100,
+//     duration: 1,
+//     stagger: 0.1,
+//     scrollTrigger: {
+//         trigger: ".left2",
+//         scroller: ".main",
+//         start: "top 80%",
+//         end: "top 20%",
+//         toggleActions: "play reset play reset"
+//     }
+// });
+
+// // Page 3
+// gsap.from(".imgbox3 .third", {
+//     opacity: 0,
+//     y: 300,
+//     duration: 1,
+//     stagger: 0.5,
+//     scrollTrigger: {
+//         trigger: ".imgbox3",
+//         scroller: ".main",
+//         start: "top 80%",
+//         toggleActions: "play reset play reset"
+//     }
+// });
+
+// gsap.from(".left3 h1, .minitext3, .lasttext3 div, .right3 div", {
+//     opacity: 0,
+//     x: -100,
+//     duration: 1,
+//     stagger: 0.1,
+//     scrollTrigger: {
+//         trigger: ".left3",
+//         scroller: ".main",
+//         start: "top 80%",
+//         end: "top 20%",
+//         toggleActions: "play reset play reset"
+//     }
+// });
+
+// // Page 4
+// gsap.from(".imgbox4 .forth", {
+//     opacity: 0,
+//     y: 300,
+//     duration: 1,
+//     stagger: 0.5,
+//     scrollTrigger: {
+//         trigger: ".imgbox4",
+//         scroller: ".main",
+//         start: "top 80%",
+//         toggleActions: "play reset play reset"
+//     }
+// });
+
+// gsap.from(".left4 h1,.left4 .tag, .minitext4, .lasttext4 div, .right4 div", {
+//     opacity: 0,
+//     x: -100,
+//     duration: 1,
+//     stagger: 0.1,
+//     scrollTrigger: {
+//         trigger: ".left4",
+//         scroller: ".main",
+//         start: "top 80%",
+//         end: "top 20%",
+//         toggleActions: "play reset play reset"
+//     }
+// });
+
+// // Page 5
+// gsap.from(".imgbox5 .fifth", {
+//     opacity: 0,
+//     y: 300,
+//     duration: 1,
+//     stagger: 0.5,
+//     scrollTrigger: {
+//         trigger: ".imgbox5",
+//         scroller: ".main",
+//         start: "top 80%",
+//         toggleActions: "play reset play reset"
+//     }
+// });
+
+// gsap.from(".left5 h1, .minitext5, .lasttext5 div, .right5 div", {
+//     opacity: 0,
+//     x: -100,
+//     duration: 1,
+//     stagger: 0.1,
+//     scrollTrigger: {
+//         trigger: ".left5",
+//         scroller: ".main",
+//         start: "top 80%",
+//         end: "top 20%",
+//         toggleActions: "play reset play reset"
+//     }
+// });
+
+// // Page 6
+// gsap.from(".imgbox6 .sixth", {
+//     opacity: 0,
+//     y: 300,
+//     duration: 1,
+//     stagger: 0.5,
+//     scrollTrigger: {
+//         trigger: ".imgbox6",
+//         scroller: ".main",
+//         start: "top 80%",
+//         toggleActions: "play reset play reset"
+//     }
+// });
+
+// gsap.from(".left6 h1, .minitext6, .lasttext6 div, .right6 div", {
+//     opacity: 0,
+//     x: -100,
+//     duration: 1,
+//     stagger: 0.1,
+//     scrollTrigger: {
+//         trigger: ".left6",
+//         scroller: ".main",
+//         start: "top 80%",
+//         end: "top 20%",
+//         toggleActions: "play reset play reset"
+//     }
+// });
+
+// // Page 7
+// gsap.from(".imgbox7 .seventh", {
+//     opacity: 0,
+//     y: 300,
+//     duration: 1,
+//     stagger: 0.5,
+//     scrollTrigger: {
+//         trigger: ".imgbox7",
+//         scroller: ".main",
+//         start: "top 80%",
+//         toggleActions: "play reset play reset"
+//     }
+// });
+
+// gsap.from(".left7 h1, .left7 .tag7, .minitext7, .lasttext7 div, .right7 div", {
+//     opacity: 0,
+//     x: -100,
+//     duration: 1,
+//     stagger: 0.1,
+//     scrollTrigger: {
+//         trigger: ".left7",
+//         scroller: ".main",
+//         start: "top 80%",
+//         end: "top 20%",
+//         toggleActions: "play reset play reset"
+//     }
+// });
